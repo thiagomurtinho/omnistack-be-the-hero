@@ -1,0 +1,19 @@
+{
+  "name": "bth_server",
+  "version": "0.1.0",
+  "description": "Server of app Be The Hero",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thiagomurtinho/omnistack-be-the-hero.git"
+  },
+  "author": "Thiago Murtinho",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thiagomurtinho/omnistack-be-the-hero/issues"
+  },
+  "homepage": "https://github.com/thiagomurtinho/omnistack-be-the-hero#readme"
+}
