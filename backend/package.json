@@ -5,6 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "jest",
+    "test-c": "jest --coverage",
     "dev": "nodemon src/server.js"
   },
   "repository": {
