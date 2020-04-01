@@ -4,8 +4,8 @@
   "description": "Server of app Be The Hero",
   "main": "server.js",
   "scripts": {
-    "test": "jest",
-    "test-c": "jest --coverage",
+    "test": "cross-env NODE_ENV=test jest",
+    "test-c": "cross-env NODE_ENV=test jest --coverage",
     "dev": "nodemon src/server.js"
   },
   "repository": {
@@ -24,6 +24,7 @@
     "sqlite3": "^4.1.1"
   },
   "devDependencies": {
+    "cross-env": "^7.0.2",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.1.0",
     "eslint-config-prettier": "^6.10.1",
