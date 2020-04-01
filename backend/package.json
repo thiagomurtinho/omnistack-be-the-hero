@@ -1,0 +1,42 @@
+{
+  "name": "bth_server",
+  "version": "0.1.0-pre-alpha",
+  "description": "Server of app Be The Hero",
+  "main": "server.js",
+  "scripts": {
+    "test": "cross-env NODE_ENV=test jest",
+    "test-c": "cross-env NODE_ENV=test jest --coverage",
+    "dev": "nodemon src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thiagomurtinho/omnistack-be-the-hero.git"
+  },
+  "author": "Thiago Murtinho",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thiagomurtinho/omnistack-be-the-hero/issues"
+  },
+  "homepage": "https://github.com/thiagomurtinho/omnistack-be-the-hero#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "knex": "^0.20.13",
+    "sqlite3": "^4.1.1"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.2",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "jest": "^25.2.4",
+    "nodemon": "^2.0.2",
+    "prettier": "^2.0.2",
+    "supertest": "^4.0.2"
+  }
+}
