@@ -16,11 +16,11 @@ module.exports = {
         uf
       })
       .then(() => {
-        res.status(200).json({ id });
+        return res.status(200).json({ id });
       })
       .catch(error => {
         const err = error.toString();
-        res.status(400).json({ err });
+        return res.status(400).json({ err });
       });
   }
 };
