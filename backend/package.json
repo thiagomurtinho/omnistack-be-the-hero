@@ -1,6 +1,6 @@
 {
   "name": "bth_server",
-  "version": "0.1.0-pre-alpha",
+  "version": "0.2.0-pre-alpha",
   "description": "Server of app Be The Hero",
   "main": "server.js",
   "scripts": {
@@ -19,6 +19,8 @@
   },
   "homepage": "https://github.com/thiagomurtinho/omnistack-be-the-hero#readme",
   "dependencies": {
+    "celebrate": "^12.0.1",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "knex": "^0.20.13",
     "sqlite3": "^4.1.1"
