@@ -13,7 +13,7 @@ module.exports = {
     const { name, email, whatsapp, city, uf } = req.body;
     const id = generateUniqueId();
 
-    await connectionDB('ongs')
+    const response = await connectionDB('ongs')
       .insert({
         id,
         name,
