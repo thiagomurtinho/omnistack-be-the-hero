@@ -7,6 +7,7 @@ routes.get('/', (req, res) => {
   res.status(200).send('Hello World!');
 });
 
+routes.get('/ongs', OngController.index);
 routes.post(
   '/ongs',
   celebrate({
