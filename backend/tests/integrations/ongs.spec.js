@@ -3,9 +3,7 @@ const app = require('../../src/app');
 const connectionDb = require('../../src/database/connections');
 
 describe('ONG', () => {
-  beforeEach(async () => {
-    await connectionDb.migrate.latest();
-  });
+  beforeEach(async () => await connectionDb.migrate.latest());
   afterAll(async () => {
     await connectionDb.migrate.rollback();
     await connectionDb.destroy();
@@ -18,7 +16,7 @@ describe('ONG', () => {
       email: 'test@email.com',
       whatsapp: '21000000000',
       city: 'Test City',
-      uf: 'TT'
+      uf: 'TT',
     });
 
     expect(response.statusCode).toBe(200);
