@@ -12,6 +12,7 @@ routes.get('/', (req, res) => {
 routes.get('/ongs', OngController.index);
 routes.post('/ongs', celebrate(validate.ongsPost), OngController.create);
 
+routes.get('/incidents', IncidentController.index);
 routes.post(
   '/incidents',
   celebrate(validate.incidentsPost),
