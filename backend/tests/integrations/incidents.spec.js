@@ -3,10 +3,10 @@ const app = require('../../src/app');
 const connectionDb = require('../../src/database/connections');
 
 describe('INCIDENTS', () => {
-  beforeEach(async () => connectionDb.migrate.latest());
+  beforeEach(async () => await connectionDb.migrate.latest());
   afterAll(async () => {
-    connectionDb.migrate.rollback();
-    connectionDb.destroy();
+    await connectionDb.migrate.rollback();
+    await connectionDb.destroy();
   });
 
   it('Should be create an incident to ong', async () => {
