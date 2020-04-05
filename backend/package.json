@@ -1,6 +1,6 @@
 {
   "name": "bth_server",
-  "version": "0.6.0-pre-alpha",
+  "version": "0.7.0-pre-alpha",
   "description": "Server of app Be The Hero",
   "main": "server.js",
   "scripts": {
