@@ -9,9 +9,12 @@ describe('ONG', () => {
     await connectionDb.destroy();
   });
 
-  const idTest = '';
   it('Should be able to create a new ONG', async () => {
-    const response = await request(app).post('/ongs').send({
+    const {
+      statusCode,
+      body,
+      body: { id },
+    } = await request(app).post('/ongs').send({
       name: 'Test Name',
       email: 'test@email.com',
       whatsapp: '21000000000',
@@ -19,18 +22,21 @@ describe('ONG', () => {
       uf: 'TT',
     });
 
-    expect(response.statusCode).toBe(200);
-    expect(response.body).toHaveProperty('id');
-    expect(response.body.id).toHaveLength(8);
+    expect(statusCode).toBe(200);
+    expect(body).toHaveProperty('id');
+    expect(id).toHaveLength(8);
   });
 
   it('Should be able to index all ONGs', async () => {
-    const response = await request(app).get('/ongs');
+    const {
+      statusCode,
+      body: { ongs },
+    } = await request(app).get('/ongs');
 
-    expect(response.statusCode).toBe(200);
-    expect(response.body.ongs).not.toBeNull();
-    response.body.ongs.map((ong, index) =>
-      expect(response.body.ongs[index]).toHaveProperty(
+    expect(statusCode).toBe(200);
+    expect(ongs).not.toBeNull();
+    ongs.map((ong, index) =>
+      expect(ongs[index]).toHaveProperty(
         'id',
         'name',
         'email',
