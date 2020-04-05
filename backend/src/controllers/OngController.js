@@ -20,10 +20,10 @@ module.exports = {
         email,
         whatsapp,
         city,
-        uf
+        uf,
       })
       .catch(error => res.status(400).json({ err: error.toString() }));
 
     return res.status(200).json({ id });
-  }
+  },
 };
