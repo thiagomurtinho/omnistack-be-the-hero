@@ -18,4 +18,21 @@ module.exports = {
 
     return res.status(200).json({ id });
   },
+  async delete(req, res) {
+    const { id } = req.params;
+    const ong_id = req.headers.auth;
+
+    const incidents = await connectionDb('incidents')
+      .where({ id, ong_id })
+      .first()
+      .select('*')
+      .del()
+      .catch(error => res.status(400).json({ err: error.toString() }));
+
+    if (!incidents) {
+      return res.status(401).json({ err: 'Not permitted' });
+    }
+
+    return res.status(200).json({ id });
+  },
 };
