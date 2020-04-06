@@ -6,12 +6,18 @@ module.exports = {
 
     const [count] = await connectionDb('incidents').count();
     const incidents = await connectionDb('incidents')
+      .join('ongs', 'ongs.id', '=', 'incidents.ong_id')
       .limit(5)
       .offset((page - 1) * 5)
-      .select('*')
+      .select([
+        'incidents.*',
+        'ongs.name',
+        'ongs.email',
+        'ongs.whatsapp',
+        'ongs.city',
+        'ongs.uf',
+      ])
       .catch(error => res.status(400).json({ err: error.toString() }));
-
-    // res.header('X-Total-Count', count['count(*)']);
 
     return res
       .header('X-Total-Count', count['count(*)'])
