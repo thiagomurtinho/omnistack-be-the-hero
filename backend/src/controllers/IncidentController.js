@@ -2,11 +2,21 @@ const connectionDb = require('../database/connections');
 
 module.exports = {
   async index(req, res) {
+    const { page = 1 } = req.query;
+
+    const [count] = await connectionDb('incidents').count();
     const incidents = await connectionDb('incidents')
+      .limit(5)
+      .offset((page - 1) * 5)
       .select('*')
       .catch(error => res.status(400).json({ err: error.toString() }));
 
-    return res.status(200).json({ incidents });
+    // res.header('X-Total-Count', count['count(*)']);
+
+    return res
+      .header('X-Total-Count', count['count(*)'])
+      .status(200)
+      .json({ incidents });
   },
   async create(req, res) {
     const { title, description, value } = req.body;
